@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var fName = function namFunc() {
+				console.log("s哈哈哈1")
+				return 1;
+			}
+			function namFunc2() {
+				console.log("s哈哈哈2")
+				return 1;
+			}
+			console.log(fName + "---" + typeof fName);
+			console.log(namFunc2 + "---" + typeof namFunc2);
+			
+			/**
+			 * @param {string} str
+			 * @param {function} fun
+			 * @param {number} num
+			 */
+			function pFun(str, fun, num) {
+				console.log(str);
+				fun();
+				console.log(num);
+				return "哈哈哈";
+			}
+			var res = pFun("abc", fName, 123);
+			console.log(res)
+			
+			var noName = function(str) {
+				console.log("this is a "+str+" function");
+				return 123;
+			}
+			var res2 = noName("3245");
+			console.log(res2)
+			console.log("-------------")
+			function printData(str, num, fun){
+				fun(str, num);
+			}
+			
+			printData("sfa",9999, function(str1, num1) {console.log(str1, num1)});
+		</script>
+	</head>
+	<body>
+		<h1>匿名函数</h1>
+	</body>
+</html>

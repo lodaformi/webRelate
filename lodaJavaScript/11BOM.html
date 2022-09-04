@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style type="text/css">
+			div {
+				width: 100px;
+				height: 100px;
+				border: 2px solid crimson;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}
+		</style>
+		<script type="text/javascript">
+			function printWindow() {
+				console.log(window)
+			}
+
+			function alertWin() {
+				window.alert("哈哈哈算法")
+				// 小心恶意调用多次
+				// window.alert("哈哈哈算法")
+				// window.alert("哈哈哈算法")
+				// window.alert("哈哈哈算法")
+			}
+
+			function promptWin() {
+				var name = window.prompt("请输入游戏角色名称：");
+				console.log(name)
+			}
+
+			function confirmWin() {
+
+				var res = window.confirm("你是不是傻？")
+				if (res) {
+					console.log("你知道就好")
+				} else {
+					confirmWin();
+				}
+				console.log(res)
+			}
+
+			var interId;
+
+			function interCount() {
+				interId = window.setInterval(function() {
+					console.log(interId + "--" + new Date())
+				}, 1000);
+			}
+
+			function clearInter() {
+				window.clearInterval(interId)
+				console.log("clean interval [" + interId + "--" + typeof interId)
+			}
+
+			function printScreen() {
+				var x = screen.width;
+				var y = screen.height;
+				console.log(x + "--" + y)
+			}
+
+			function navigatorTest() {
+				console.log(window.navigator.userAgent)
+				console.log(window.statusbar)
+			}
+
+			function locationTest() {
+				window.location.href = "https://www.baidu.com"
+			}
+
+			function locationTest2() {
+				window.location.reload()
+			}
+
+			function innerTest() {
+				document.getElementById("h01").innerHTML = "BOM" + "---" + Math.random()
+			}
+			
+			function getStyle(obj, attr) {
+				if (obj.currentStyle) {
+					return obj.currentStyle[attr];
+				} else {
+					return getComputedStyle(obj)[attr];
+				}
+			}
+
+			function boxMove() {
+				var ele = document.getElementById("d01");
+				// var x = ele.style.left;
+				var x = getComputedStyle(ele)["left"];
+				
+				console.log("[" + x + "]")
+				console.log("[" + (parseInt(x) + 10) + "px" + "]")
+				interId = window.setInterval(function(){
+					x = (parseInt(x) + 10) + "px"
+					ele.style.left = x
+				},100)
+
+				// var y = document.getElementById("d01").style.top;
+				// window.setInterval(function() {
+				// 	x = x + parseInt(Math.random()*(101))
+				// }, 1000)
+				// console.log(res)
+			}
+			function openTest() {
+				window.open("https://www.baidu.com")
+			}
+			function closeTest() {
+				window.close()
+			}
+			function stopMove() {
+				window.clearInterval(interId)
+			}
+		</script>
+	</head>
+	<body onload="boxMove();">
+	<!-- <body> -->
+		<h1 id="h01">BOM</h1>
+		<div id="d01"></div>
+		<input type="button" value="b1" onclick="printWindow();">
+		<input type="button" value="b2" onclick="alertWin();">
+		<input type="button" value="b3" onclick="promptWin();">
+		<input type="button" value="b4" onclick="confirmWin();">
+		<input type="button" value="clearInter" onclick="clearInter();">
+		<input type="button" value="printScreen" onclick="printScreen();">
+		<input type="button" value="navigatorTest" onclick="navigatorTest();">
+		<br>
+		<input type="button" value="locationTest" onclick="locationTest();">
+		<input type="button" value="locationTest2" onclick="locationTest2();">
+		<input type="button" value="boxMove" onclick="boxMove();">
+		<input type="button" value="stopMove" onclick="stopMove();">
+		<input type="button" value="openTest" onclick="openTest();">
+		<input type="button" value="closeTest" onclick="closeTest();">
+	</body>
+</html>

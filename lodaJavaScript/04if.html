@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script type="text/javascript">
+		var money = 5000000;
+		if (money > 10) {
+			document.writeln("馒头");
+		} else if (money > 20){
+			document.writeln("面包");
+		} else if(money > 40) {
+			document.writeln("大盘鸡");
+		} else {
+			document.writeln("跑车");
+		}
+		
+		// 错误写法
+		if(money > 1000000) {
+			document.writeln("跑车");
+		}else if(money > 40) {
+			document.writeln("大盘鸡");
+		}else if (money > 20){
+			document.writeln("面包");
+		}else if (money > 10) {
+			document.writeln("馒头");
+		} else {
+			document.writeln("想屁吃");
+		}
+	</script>
+</head>
+
+<body>
+	<h1>if语句</h1>
+</body>
+</html>

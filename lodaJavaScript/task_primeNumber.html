@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			td {
+				/* border: 1px solid yellowgreen; */
+				text-align: right;
+			}
+		</style>
+		<script type="text/javascript">
+			var count = 0;
+			document.write("<table>")
+			document.write("<tr>")
+			for (var i = 2; i < 1000; i++) {
+				var flag = true;
+				for (var j = 2; j <= parseInt(Math.sqrt(i)); j++) {
+					if(i % j == 0) {
+						flag = false;
+						break;
+					}
+					flag = true;
+				}
+				
+				if(flag == true) {
+					++count;
+					document.write("<td>"+i+"</td>")
+					if (count % 8 == 0) {
+						document.write("</tr>");
+						document.write("<tr>");
+					}
+				}
+			}
+			document.write("</tr>");
+			document.write("</table>")
+		</script>
+	</head>
+	<body>
+		<h1>质数prime number</h1>
+	</body>
+</html>

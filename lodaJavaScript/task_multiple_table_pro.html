@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style type="text/css">
+			td {
+				border: 2px solid darkred;
+				text-align: center;
+				width: 60px;
+				height: 40px;
+			}
+			.up {
+				border: 2px solid darkcyan;
+			}
+			.mid {
+				border: 2px solid white;
+				text-align: center;
+				height: 40px;
+			}
+		</style>
+		<script type="text/javascript">
+			document.write("<table>")
+			for (var i = -1; i <= 9; ++i) {
+				document.write("<tr>")
+				for (var j = 1; j <= 9; j++) {
+					if (j <= i) {
+						document.write("<td class=down>" + j + "*" + i +"="+ (i*j)+ "</td>")
+					} else if(j == i+1){
+						document.write("<td class=mid>" + j +"</td>")
+					} else {
+						document.write("<td class=up>" + (i+2) + "*" + j + "=" +((i+2)*j)+ "</td>")
+					}
+
+				}
+				document.write("</tr>")
+			}
+			document.write("</table>")
+		</script>
+	</head>
+	<body>
+		<h1>九九乘法表Pro</h1>
+	</body>
+</html>

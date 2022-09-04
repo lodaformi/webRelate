@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style type="text/css">
+		table {
+			border: 1px solid darkcyan;
+			width: 400px;
+			height: 200px;
+		}
+		td {
+			border: 1px dotted black;
+			font-size: 5px;
+		}
+		/* //隐藏占位 */
+		#contTD {
+			visibility: hidden;
+		}
+		#upTabRightMirror{
+			position: absolute;
+			left: 450px;
+			top: 8px;
+			margin: auto;
+		}
+		#downTabRightMirror{
+			position: absolute;
+			left: 450px;
+			top: 239px;
+		}
+	</style>
+	
+	<script type="text/javascript">
+		
+		document.write("<table>");
+		for (var i = 1; i <= 9; ++i) {
+			document.write("<tr>")
+			for (var j = 1; j <= i; ++j) {
+				document.write("<td>" +  j + "*" + i + "=" + (j * i)+ "</td>");
+			}
+			document.write("</tr>");
+		}
+		document.write("</table>");
+		
+		//上table的右镜像
+		document.write("<table id=upTabRightMirror>");
+		for (var i = 1; i <= 9; ++i) {
+			var cnt = 9;
+			document.write("<tr>")
+			for (var j = 9; j >=1; --j) {
+				if(cnt > i) {
+					--cnt;
+					/* 隐藏占位 */
+					document.write("<td "+"id=contTD"+">"+cnt+"</td>");
+				} else {
+					document.write("<td>"+ (i*j) + "=" + i+ "*" + j + "</td>")
+				}
+			}
+			document.write("</tr>");				
+		}
+		document.write("</table>");
+		
+		document.write("<hr/>");
+		document.write("<hr/>");
+		
+		// 上table的下镜像
+		document.write("<table>");
+		for (var i = 9; i >= 1; --i) {
+			document.write("<tr>");
+			for (var j = 1; j <= i; ++j) {
+				document.write("<td>" + j + "*" + i + "=" + (i*j) + "</td>");
+			}
+			document.write("</tr>");
+		}
+		document.write("</table>");
+		
+		//下镜像的右镜像
+		document.write("<table id=downTabRightMirror>");
+		for (var i = 9; i >= 1; --i) {
+			document.write("<tr>");
+			var cnt = 9;
+			for (var j = 9; j >= 1; --j) {
+				if(cnt > i) {
+					--cnt;
+					document.write("<td bgcolor=red id=contTD>" + cnt + "</td>");
+				}else {
+					// document.write("<td>"+i+"</td>")
+					// document.write("<td>" + j + "*" + i + "=" + (i*j) + "</td>");
+					document.write("<td>"+ (i*j) + "=" + i+ "*" + j + "</td>")					
+				}
+			}
+			document.write("</tr>");
+		}
+		document.write("</table>");
+	</script>
+</head>
+<body>
+	<h1>九九乘法表</h1>
+<!-- 	<table>
+		<tr>
+			<td bgcolor="red">hh</td>
+		</tr>
+	</table> -->
+</body>
+
+<!-- 	<frameset rows="3,7">
+		<frame>
+		<frame>
+	</frameset> -->
+</html>

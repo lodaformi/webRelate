@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+
+		<script type="text/javascript">
+			var dice1 = parseInt(Math.random() * (6 - 1 + 1) + 1);
+			var dice2 = parseInt(Math.random() * (6 - 1 + 1) + 1);
+			var dice3 = parseInt(Math.random() * (6 - 1 + 1) + 1);
+
+			console.log("dice1[ " + dice1 + "]")
+			console.log("dice2[ " + dice2 + "]")
+			console.log("dice3[ " + dice3 + "]")
+			console.log("----------------------")
+
+			var max1, max2, max3, tmp;
+
+			//dice1中存放最大值
+			if (dice1 > dice2) {
+				if (dice1 > dice3) { // dice2 < dice1 , dice3 < dice1
+					tmp = dice1;
+					dice1 = dice3;
+					dice3 = tmp;
+				} else { // dice2 < dice1 < dice3
+					tmp = dice1;
+					dice3 = dice1;
+					dice1 = tmp;
+					// max1 = dice3;
+				}
+			}
+
+			//dice2中存放较大值，dice3中存放最小值
+			if (dice2 > dice3) {
+				tmp = dice2;
+				dice2 = dice3;
+				dice3 = tmp;
+				// max2 = dice2;
+			} 
+			
+
+			console.log("comp dice1[ " + dice1 + "]")
+			console.log("comp dice2[ " + dice2 + "]")
+			console.log("comp dice3[ " + dice3 + "]")
+			console.log("----------------------")
+			// console.log("max1[ "+max1+"]")
+			// console.log("max2[ "+max2+"]")
+			console.log("max1[ " + max1 + "]")
+			console.log("max2[ " + max2 + "]")
+			// console.log("dice3[ "+dice3+"]")			
+			// var max1 = dice1 > dice2 ? (dice1 > dice3 ? dice1 : dice3) : (dice2 > dice3 ? dice2 : dice3);
+			// var max2 = 
+
+			var aList = [dice1, dice2, dice3];
+			// sort() 方法会改变原始数组，从小到大排序
+			aList.sort();
+			for (var i = 0; i < aList.length; ++i) {
+				console.log(aList[i]);
+			}
+
+			if (aList[0] == aList[1] && aList[1] == aList[2]) {
+				console.log("豹子");
+			} else if ((aList[1] - aList[0]) == 1 && (aList[2] - aList[1]) == 1) {
+				console.log("顺子");
+			} else if (aList[0] == aList[1] || aList[1] == aList[2]) {
+				console.log("双");
+			} else {
+				console.log(aList[2]);
+			}
+		</script>
+
+	</head>
+	<body>
+
+	</body>
+</html>

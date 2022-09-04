@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#d1 {
+				height: 100px;
+				width: 100px;
+				border: 2px yellowgreen dotted;
+			}
+
+			#d2 {
+				height: 100px;
+				width: 100px;
+				border: 2px blueviolet dotted;
+			}
+
+			#d3 {
+				height: 100px;
+				width: 100px;
+				border: 2px navajowhite dotted;
+			}
+			#d4 {
+				height: 100px;
+				width: 100px;
+				border: 2px peru dashed;
+			}
+			#d5 {
+				height: 100px;
+				width: 100px;
+				border: 2px peru outset;
+			}
+			#d6 {
+				height: 100px;
+				width: 100px;
+				border: 2px peru inset;
+			}
+		</style>
+		<script type="text/javascript">
+			function clickFun() {
+				console.log("单击一下");
+			}
+
+			function dbclickFun() {
+				console.log("双击一下");
+			}
+
+			function mouseMove(e) {
+				console.log("随心所移[x:" + e.x+"---y:"+e.y + "]")
+			}
+
+			function mouseOver() {
+				console.log("移到上面[" + Math.random() + "]")
+			}
+
+			function mouseOut() {
+				console.log("移走了[" + Math.random() + "]")
+			}
+			function mouseWheel() {
+				console.log("滚动[" + Math.random() + "]")
+			}
+			function mouseDown() {
+				console.log("下面[" + Math.random() + "]")
+			}
+			function mouseUp() {
+				console.log("上面[" + Math.random() + "]")
+			}
+		</script>
+	</head>
+	<body>
+		<h1>mouse event</h1>
+		<input type="button" name="b1" value="button1" onclick="clickFun();">
+		<input type="button" name="b2" value="button2" ondblclick="dbclickFun();">
+		<div id="d1" onmousemove="mouseMove(event);"></div>
+		<div id="d2" onmouseout="mouseOut();"></div>
+		<div id="d3" onmouseover="mouseOver();"></div>
+		<div id="d4" onmousewheel="mouseWheel();"></div>
+		<div id="d5" onmousedown="mouseDown();"></div>
+		<div id="d6" onmouseup="mouseUp();"></div>
+		<div id="d6" onmouse="mouseUp();"></div>
+	</body>
+</html>

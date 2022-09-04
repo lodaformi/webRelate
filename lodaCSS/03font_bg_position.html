@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#p005 {
+				color: blueviolet;
+				/* color: rgb(234, 33, 87); */
+				color: #RRGBBB;
+				font-size: 20px;
+				font-family: 'Times New Roman', Times, serif;
+				font-family: 宋体;
+				font-style: italic;
+				text-decoration: underline;
+			}	
+			#d1 {
+				/* text-decoration: underline; */
+				/* text-decoration: overline; */
+				text-decoration: line-through;
+				height: 300px;
+				width: 900px;
+				font-size: 100px;
+				border: thick double yellow;
+				background-color: rgba(234, 23, 178, 0.4);
+				line-height: 300px;
+				text-align: center;
+				margin: auto;
+			}
+			
+			#d2 {
+				position: absolute;
+				left: 260px;
+				top: 330px;
+				height: 100px;
+				width: 100px;
+				background-color: rgba(234, 23, 1);
+				z-index: 1;
+			}
+			#d3 {
+				position: absolute;
+				left: 200px;
+				top: 300px;
+				height: 100px;
+				width: 100px;
+				background-color: rgba(2, 23, 1);
+				z-index: 2;
+			}
+			#d4 {
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				height: 100%;
+				width: 100%;
+				/* 透明罩 */
+				background-color: rgba(232, 56, 69, 0);
+				/* 在最上面 */
+				z-index: 999;
+			}
+			#p1 {
+				/* text-decoration: underline; */
+				/* text-decoration: overline; */
+				height: 300px;
+				width: 900px;
+				font-size: 10px;
+				border: thick double yellow;
+				background-color: rgba(4, 23, 178, 0.4);
+				line-height: 300px;
+				text-align: center;
+				margin: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>font</h1>
+		
+		<p id="p001">001</p>
+		<p id="p002">002</p>
+		<p id="p003">003</p>
+		<a href="">点我下载</a>
+		<p id="p004">004</p>
+		<p id="p005">005absdfa啦啦啦啦</p>
+		<p id="p006">006</p>
+
+		<!-- <div id="d1">哈哈哈xxx噢噢噢</div> -->
+		
+		<p id="p1">飞雪连天射白鹿，笑书神侠倚碧鸳</p>
+		
+		
+		<div id="d2"></div>
+		<div id="d3"></div>
+		<!-- 符号要匹配 -->
+		<!-- <div id="d4" onclick="alert('我是透明罩');"></div> -->
+		<!-- <div id="d4" onclick="window.open('https://www.baidu.com');"></div> -->
+	</body>
+</html>

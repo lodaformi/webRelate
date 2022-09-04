@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style type="text/css">
+			div {
+				width: 30px;
+				height: 30px;
+				/* border: 2px solid darkmagenta; */
+				background-color: darkmagenta;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}
+		</style>
+		<script type="text/javascript">
+			var interName;
+
+			function move() {
+				interName = window.setInterval(function() {
+					var ele = document.getElementById("d01")
+					var oldLeft = parseInt(getComputedStyle(ele)["left"])
+					var oldTop = parseInt(getComputedStyle(ele)["top"])
+					console.log(oldLeft + "--" + oldTop)
+					//left 100-800的随机值
+					var newLeft =  parseInt(Math.random() * 901 + 100) + "px"
+					//top 20-500的随机值
+					var newTop = parseInt(Math.random() * 681 + 20) + "px"
+					ele.style.left = newLeft
+					ele.style.top = newTop
+				}, 100)
+			}
+
+		</script>
+	</head>
+	<body onload="move();">
+		<div id="d01"></div>
+	</body>
+</html>

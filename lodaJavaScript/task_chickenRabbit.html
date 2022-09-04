@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			//方法一
+			for (var i = 1; i <= 35; ++i) {
+				for (var j = 1; j <= 35; ++j) {
+					if ( (i+j == 35) && ((2 * i + 4 * j) == 94)) {
+						console.log("方法一：鸡[" + i + "]，兔[" + j + "]")
+					}
+				}
+			}
+			
+			//优化：方法二
+			//如果全为鸡，94/2=47，会有47只鸡，此值比35大，不用
+			//如果全为兔，94/4=23.5，最多有23只兔子，，此值比35小，可以减少计算量
+			for (var i = 1; i <= 35; ++i) {  
+				for (var j = 1; j <= 23; ++j) {
+					if ( (i+j == 35) && ((2 * i + 4 * j) == 94)) {
+						console.log("方法二：鸡[" + i + "]，兔[" + j + "]")
+					}
+				}
+			}
+			
+			for (var i = 1; i <= 35; ++i) {
+				var r = 35 - i;
+					if (((2 * i + 4 * r) == 94)) {
+						console.log("方法三：鸡[" + i + "]，兔[" + r + "]")
+					}
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h1>鸡兔同笼</h1>
+		<p>今有雉兔同笼，上有三十五头，下有九十四足，问雉兔各几何？</p>
+	</body>
+</html>

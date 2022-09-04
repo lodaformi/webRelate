@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style type="text/css">
+		/* id选择器 */
+		#myh2 {
+			font-size: 10px;
+			font-style: italic;
+			color: aliceblue;
+		}
+		/* 元素选择器 */
+		h2 {
+			background-color: blue;
+		}
+		span {
+			color: blue;
+		}
+		/* 属性选择器-属性 */
+		p[name] {
+			font-family: "楷体";
+			/* font-weight: 100; */
+			font-style: italic;
+		}
+		/* 注意先后顺序，如果后面的选择器还能匹配到前面选择器匹配过的元素，后面选择器样式生效 */
+		/* 属性选择器-属性+值 */
+		p[name=p2] {
+			font-family: 'Courier New', Courier, monospace;
+			font-style: normal;
+		}
+		/* 类选择器 - 小红花，多个类选择器使用逗号隔开*/
+		.shortcut {
+			color: chocolate;
+		}
+		
+		.desc,b,i,u {
+			/* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+			font-weight: 300;
+		}
+		/* 层次选择器 */
+		/* 祖先后代选择器 空格*/
+		form td {
+			font-style: italic;
+		}
+		/* 父子选择器  >大于符号 */
+		form > input {
+			background-color: chocolate;
+			font-style: italic;
+		}
+		/* 兄弟选择器 +加号*/
+		form + span {
+			color: darkmagenta;
+		}
+		/* 通配符选择器 */
+	/* 	*{
+			margin: 0%;
+		} */
+		/* 伪类选择器 */
+		a:link {
+			font-size:20px;
+			color: black;
+		}
+		a:hover {
+			font-size: 30px;
+			color: darkcyan;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>标签选择器</h2>
+	<h2>h2标题</h2>
+	<h2 id="myh2">标题h2</h2>
+	<span>很好很好2</span>
+	<hr>
+	<h4 class="shortcut">快捷键</h4>
+	<div class="desc">
+		标签的“内壁”和文字之间的空格会被忽略。 接下来我具体的演示一下,第1种空白折叠现象到底是怎么回事。
+	</div>
+	<b><i><u>下划线倾斜加粗</u></i></b>
+	
+	<hr>
+	<form action="" method="get">
+		<table>
+			<tr>
+				<td>姓名</td>
+				<td>
+					<input type="text" name="uname" size="30px" placeholder="请输入真实姓名">
+				</td>
+			</tr>
+		</table>
+		<input type="text" name="phone" size="50px" placeholder="please input your phone number">手机号码
+	</form>
+		<span>很好很好3</span>
+		<span>很好很好4</span>
+		<span>很好很好5</span>
+	<br>
+		
+	<hr>
+	<p name="p1">HBuilder 创建的项目支持直接托管到 Code China(后面 Code China 简称为 code。)，HBuilder 编辑器 + codechina-workflow 插件 + code 平台一起相结合完成用户的项目协作开发。</p>
+	<p name="p2">将项目托管到 code 有两种方式，</p>
+	<hr>
+	<a href="">百度</a>
+	<a href="">google</a>
+	<a href="">淘宝</a>
+</body>
+</html>

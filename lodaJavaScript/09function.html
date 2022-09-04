@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			//不存在函数重载，只看函数名，不看参数列表
+			//后面函数会覆盖前面函数
+			/**
+			 * @param {string} str1
+			 */
+			function printString (str1) {
+				console.log(str1)
+			} 
+			/**
+			 * @param {string} str1
+			 * @param {string} str2
+			 */
+			function printString (str1, str2) {
+				console.log(str1, str2)
+			}
+			printString("ad",123);
+			printString("ad");
+			
+			var res = printString("sfa",12.345)
+			console.log(res+"---"+typeof res)
+			console.log(printString+"---"+typeof printString)
+			
+			function add(num1, num2) {
+				console.log(num1 + num2)
+				// return new Array("adf", 12.34, [2,8,2,1,5]);
+				return ["adf", 12.34, [2,8,2,1,5]];
+			}
+			var res= add(44, 23)
+			console.log(res)
+			console.log(res[0])
+			console.log(res[1])
+			console.log(res[2])
+		</script>
+	</head>
+	<body>
+		<h1>function</h1>
+		<input type="text" onclick="">
+	</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style type="text/css">
+			table {
+				margin: auto;
+			}
+
+			td {
+				border: 2px solid crimson;
+				width: 20px;
+				height: 20px;
+				text-align: center;
+				color: aqua;
+			}
+		</style>
+		<script type="text/javascript">
+			function gongGe() {
+				var interName;
+				var rows = 7;
+				// 画表格
+				document.write("<table>")
+				document.write("<caption><h1>" + (rows * rows) + "宫格" + "</h1></caption>")
+				for (var i = 1; i <= rows; ++i) {
+					document.write("<tr>")
+					for (var j = 1; j <= rows; ++j) {
+						document.write("<td id=td_" + i + "_" + j + "></td>")
+					}
+					document.write("</tr>")
+				}
+				document.write("</table>")
+
+				var x = 1;
+				var y = 1;
+				var mid = parseInt(rows / 2) + 1;
+				var i = 1;
+				//将for循环替换为setInterval函数，循环遍历另外控制
+				interName = window.setInterval(function() {
+					if (i == 1) { //一居上行正中央
+						//选出第一行中间格子
+						x = 1;
+						y = mid;
+					} else { //依次斜填切莫忘
+						x -= 1;
+						y += 1;
+
+						if (y > rows && x < 1) { //右上重排一个样
+							x += 2;
+							y -= 1;
+						} else if (x < 1) { //左出框时向下放
+							x = rows;
+						} else if (y > rows) { //右出框时向左放
+							y = 1;
+						} else { //重排便在下格填
+							var ele = document.getElementById("td_" + x + "_" + y);
+							if (ele.innerText != null && ele.innerText.length > 0) {
+								x += 2;
+								y -= 1;
+							}
+						}
+					}
+					document.getElementById("td_" + x + "_" + y).innerText = i;
+					if (i == (rows * rows) ) {
+						window.clearInterval(interName);
+					}else {
+						++i;
+					}
+					console.log(interName+"--i["+i+"]")
+				}, 100);
+				
+
+				// for (var i = 1; i <= rows * rows; ++i) {
+				// 	if (i == 1) { //一居上行正中央
+				// 		//选出第一行中间格子
+				// 		x = 1;
+				// 		y = mid;
+				// 	} else { //依次斜填切莫忘
+				// 		x -= 1;
+				// 		y += 1;
+
+				// 		if(y > rows && x < 1) {	//右上重排一个样
+				// 			x += 2;
+				// 			y -= 1;
+				// 		}else if (x < 1) { //左出框时向下放
+				// 			x = rows;
+				// 		} else if (y > rows) { //右出框时向左放
+				// 			y = 1;
+				// 		}
+				// 		else  {//重排便在下格填
+				// 			var ele = document.getElementById("td_" + x + "_" + y);
+				// 			if(ele.innerText != null && ele.innerText.length > 0) {
+				// 				x += 2;
+				// 				y -= 1;
+				// 			}
+				// 		}
+				// 	}
+				// 	interName = window.setInterval(function(){
+				// 		document.getElementById("td_" + x + "_" + y).innerText = i;
+				// 	},1000);
+
+				// }
+			}
+			gongGe();
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

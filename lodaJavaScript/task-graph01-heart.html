@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style type="text/css">
+			td {
+				/* border: 2px solid royalblue; */
+				background-color: rosybrown;
+				width: 20px;
+				height: 20px;
+			}
+
+			.tdg {
+				/* border: 2px solid royalblue; */
+				background-color: rosybrown;
+				width: 20px;
+				height: 20px;
+			}
+
+			.tdw {
+				/* border: 2px solid royalblue; */
+				background-color: white;
+				width: 20px;
+				height: 20px;
+			}
+			.tdgr {
+				/* border: 2px solid royalblue; */
+				background-color: gray;
+				width: 20px;
+				height: 20px;
+			}
+		</style>
+		<script type="text/javascript">
+			//点
+			document.write("<table>")
+			document.write("<tr>")
+			document.write("<td></td>")
+			document.write("</tr>")
+			document.write("</table>")
+			document.write("<hr>")
+			//线
+			document.write("<table>")
+			document.write("<tr>")
+			for (var i = 0; i < 10; ++i) {
+				document.write("<td></td>")
+			}
+			document.write("</tr>")
+			document.write("</table>")
+			document.write("<hr>")
+
+			//正方形
+			document.write("<table>")
+			for (var i = 0; i < 11; ++i) {
+				document.write("<tr>")
+				for (var j = 0; j < 11; j++) {
+					if (j == 0 || j == 10 || i ==0 || i==10) {
+						document.write("<td class= tdg></td>")
+					}else {
+						document.write("<td class=tdw></td>")
+					}
+				}
+				document.write("</tr>")
+			}
+			document.write("</table>")
+			document.write("<hr>")
+
+			//左下三角
+			var rWidth = 11;
+			document.write("<table>")
+			for (var i = 0; i < rWidth; ++i) {
+				document.write("<tr>")
+				for (var j = 0; j < rWidth; j++) {
+					if (j == 0 || i==10 || j==i) {
+						document.write("<td class= tdg></td>")
+					} else {
+						document.write("<td class=tdw></td>")
+					}
+				}
+				document.write("</tr>")
+			}
+			document.write("</table>")
+			document.write("<hr>")
+			//右下三角
+			document.write("<table>")
+			for (var i = 0; i < rWidth; ++i) {
+				document.write("<tr>")
+				for (var j = 0; j < rWidth; j++) {
+					if (rWidth - 1 - i == j || j==10 || i==10) {
+						document.write("<td class= tdg></td>")
+					}
+					else {
+						document.write("<td class=tdw></td>")
+					}
+				}
+				document.write("</tr>")
+			}
+			document.write("</table>")
+			document.write("<hr>")
+			//等腰三角形
+			var rCol = 21;
+			var mid = parseInt(rCol / 2);
+			document.write("<table>")
+			for (var i = 0; i < 11; i++) {
+				document.write("<tr>")
+				//打印白色空格，占位，只占左上角空白
+				for (var j = 0; j < (mid - i); j++) {
+					document.write("<td class='tdw'></td>")
+				}
+				//打印颜色空格，控制每行的个数
+				for (var j = 0; j < (2 * i + 1); j++) {
+					document.write("<td class='tdr'></td>")
+				}
+				document.write("</tr>")
+			}
+			document.write("</table>")
+			document.write("<hr>")
+
+			//上下菱形
+			rWidth = 21;
+			rCol = 21;
+			mid = parseInt(rCol / 2);
+			document.write("<table>")
+			for (var i = 0; i < 11; i++) {
+				document.write("<tr>")
+				//打印白色空格，占位，只占左上角空白
+				for (var j = 0; j < (mid - i); j++) {
+					document.write("<td class='tdw'></td>")
+				}
+				//打印颜色空格，控制每行的个数
+				for (var j = 0; j < (2 * i + 1); j++) {
+					document.write("<td class='tdr'></td>")
+				}
+				document.write("</tr>")
+			}
+
+			for (var i = 11; i < 21; i++) {
+				document.write("<tr>")
+				//打印白色空格，占位，只占左下角空白
+				for (var j = 0; j <= i - 11; ++j) {
+					document.write("<td class='tdw'></td>")
+				}
+				for (var j = 1; j <= (19 - (i - 11) * 2); j++) {
+					document.write("<td class='tdr'></td>")
+				}
+				document.write("</tr>")
+			}
+			document.write("</table>")
+			document.write("<hr>")
+
+			//-----------------------------------------------------打印菱形
+			document.write("<table>")
+
+			var length = 25;
+			var middle = parseInt(length / 2);
+
+			for (var i = 0; i < length; i++) {
+				document.write("<tr>")
+				//判断前10,后9
+				if (i < middle) {
+					//打印白色的空格
+					for (var j = 0; j < (middle - i); j++) {
+						document.write("<td class='tdw'></td>")
+					}
+					//打印红色的空格
+					for (var j = 0; j < (2 * i + 1); j++) {
+						document.write("<td class='tdg'></td>")
+					}
+				} 
+				else {
+					//打印白色的空格
+					for (var j = 0; j < (i - middle); j++) {
+						document.write("<td class='tdw'></td>")
+					}
+					//打印红色的空格
+					for (var j = 0; j < (length - (i - middle) * 2); j++) {
+						document.write("<td class='tdg'></td>")
+					}
+				}
+
+				document.write("</tr>")
+			}
+			document.write("</table>")
+			//-----------------------------------------------------打印菱形
+			document.write("<table>")
+			
+			var length = 21;
+			var middle = parseInt(length / 2);
+			
+			for (var i = 0; i < length; i++) {
+				document.write("<tr>")
+				//判断前10,后9
+				if (i < middle) {
+					//打印白色的空格
+					for (var j = 0; j < (middle - i); j++) {
+						document.write("<td class='tdw'></td>")
+					}
+					//打印红色的空格
+					for (var j = 0; j < (2 * i + 1); j++) {
+						document.write("<td class='tdg'></td>")
+					}
+				} 
+				else { //i>=mid
+					//打印白色的空格
+					for (var j = 0; j < (i - middle); j++) {
+						document.write("<td class='tdw'></td>")
+					}
+					//打印红色的空格
+					for (var j = 0; j < (length - (i - middle) * 2); j++) {
+						document.write("<td class='tdg'></td>")
+					}
+				}
+			
+				document.write("</tr>")
+			}
+			document.write("</table>")
+			
+		</script>
+	</head>
+	<body>
+		<h1>graph</h1>
+	</body>
+</html>

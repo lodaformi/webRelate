@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script type="text/javascript">
+		function printContent() {
+			console.log(document.getElementById("in01").value);
+			// console.log($("#copyText").val())
+		}
+		function copyFalse() {
+			alert("请注册为VIP账户！");
+			return false;
+		}
+	</script>
+</head>
+<body oncopy="return copyFalse();">
+	<h1>oncopy</h1>
+	文本框<input type="text" id="in01" name="copyText" value="empty" placeholder="输入复制的内容" onblur="printContent();">
+	<div>想复制我吗</div>
+</body>
+</html>

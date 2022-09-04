@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="" method="get">
+			<table border="1px" width="800px">
+				<h1>非诚勿扰交友网站</h1>
+				<tr>
+					<th width="200px">姓名</th>
+					<td width="600px">
+						<input type="text" name="uname" placeholder="请输入你真实的名字">
+					</td>
+				</tr>
+
+				<tr>
+					<th>性别</th>
+					<td>
+						<input type="radio" name="gender" value="0" >男
+						<input type="radio" name="gender" value="1" checked>女
+					</td>
+				</tr>
+				<tr>
+					<th>密码</th>
+					<td>
+						<input type="password" name="pwd">
+					</td>
+				</tr>				
+				<tr>
+					<th>婚姻状况</th>
+					<td>
+						<input type="radio" name="married" value="1" checked>未婚
+						<input type="radio" name="married" value="2">离异
+						<input type="radio" name="married" value="3">离异带孩
+						<input type="radio" name="married" value="4">丧偶
+					</td>
+				</tr>
+				<tr>
+					<th>出生年月</th>
+					<td>
+						<input type="date" name="birthday" >
+						<!-- <input type="datetime-local" name="birthday" id=""> -->
+						<!-- <input type="datetime" name="birthday" id=""> -->
+					</td>
+				</tr>
+				<tr>
+					<th>电话号码</th>
+					<td>
+						<input type="text" name="phone" placeholder="请输入电话号码">
+					</td>
+				</tr>
+								
+				<tr>
+					<th>籍贯</th>
+					<td>
+						
+						<select name="province" size=3>
+							<option value="1">河南</option>
+							<option value="2" selected>湖南</option>
+							<option value="3">湖北</option>
+							<option value="4">内蒙古</option>
+							<option value="5">东北</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>职业</th>
+					<td>
+						<select name="occupation" multiple size=3>
+							<option value="1" selected>程序员</option>
+							<option value="2">武警</option>
+							<option value="3">外卖小哥</option>
+							<option value="4">销售</option>
+							<option value="5">教师</option>
+							<option value="6">医生</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>爱好</th>
+					<td>
+						<input type="checkbox" name="hobby" value="1">跑步
+						<input type="checkbox" name="hobby" value="2">游泳
+						<input type="checkbox" name="hobby" value="3">羽毛球
+						<input type="checkbox" name="hobby" value="4">唱歌
+						<input type="checkbox" name="hobby" value="5" checked>宅
+					</td>
+				</tr>
+				<tr>
+					<th>个人介绍</th>
+					<td>
+						<!-- textarea不能换行，换行会体现在网页上，变成提交的内容，需一定注意 -->
+						<textarea name="self_introduction" cols="50" rows="5">请删除默认值</textarea>
+					</td>
+				</tr>
+				<tr>
+					<th>个人照片</th>
+					<td>
+						<!-- 需要用到io知识 -->
+						<input type="file" name="picture" id="">
+					</td>
+				</tr>
+				<!-- other label -->
+				<tr>
+					<th>颜色</th>
+					<td>
+						<input type="color" name="col" id="">
+					</td>
+				</tr>
+				<tr>
+					<th>其他标签</th>
+					<td>
+						<input type="email" name="" id="">
+						<input type="tel" name="" id="">
+						<input type="url" name="" id="">
+						<input type="week" name="" id="">
+					</td>
+				</tr>
+				<tr>
+					<th colspan="2">
+					<input type="submit" value="注册"> &nbsp;&nbsp;
+					<input type="reset" value="重置"> 
+					<input type="button" value="点击" onclick="alert('what are u doing?');">
+					</th>
+					
+				</tr>
+			</table>
+
+		</form>
+	</body>
+</html>

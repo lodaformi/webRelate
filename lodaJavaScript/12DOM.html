@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style type="text/css">
+			div {
+				border: 1px crimson solid;
+				width: 150px;
+				height: 100px;
+				font-size: 10px;
+				color: greenyellow;
+			}
+			#d02 {
+				border: 1px crimson solid;
+				width: 150px;
+				height: 100px;
+				font-size: 10px;
+				color: darkgoldenrod;
+			}
+		</style>
+		<script type="text/javascript">
+			function eleTest() {
+				var ele = document.getElementById("d02")
+				console.log(ele.style.color)
+				console.log(getComputedStyle(ele)["color"])
+				console.log(ele+"--"+typeof ele)
+			}
+			// function styleFun(obj, attr) {
+			// 	var ele = document.getElementById(obj);
+			// 	if (ele) {
+			// 		return ele.style.
+			// 	} else {
+					
+			// 	}
+			// 	console.log(ele.style.color+"--"+typeof ele.style.color)
+			// }
+			function getValue() {
+				var ele = document.getElementById("t01");
+				console.log(ele.value);
+				console.log(ele.type);
+			}
+			function setValue() {
+				var ele = document.getElementById("t01");
+				ele.value = "星期六自觉晚自习";
+			}
+			
+			function getText() {
+				var ele = document.getElementById("d01");
+				console.log(ele.innerText+"--"+ele.innerHTML)
+			}
+			function setText() {
+				var ele = document.getElementById("d01");
+				// ele.innerText += "啥地方啊";
+				ele.innerHTML +=  "我也不知道啊";
+				console.log(ele.innerText+"--"+ele.innerHTML)
+			}
+			function getStyle() {
+				var ele = document.getElementById("d01");
+				console.log(ele.style.color+"--"+typeof ele.style.color)
+				
+			}
+		</script>
+	</head>
+	<body>
+		<h1>DOM</h1>
+		<div id="d01">星期天去放风gogogo!</div>
+		<!-- <div id="d01"><p>星期天去放风gogogo!</p></div> -->
+		<input type="text" name="text01" id="t01" value="this is a text input box." >
+
+		<div id="d02">该睡觉了</div>
+		<br>
+		<input type="button" value="getValue" id="b01" onclick="getValue();">
+		<input type="button" value="setValue" id="b02" onclick="setValue();">
+		<input type="button" value="getText" id="b03" onclick="getText();">
+		<input type="button" value="setText" id="b04" onclick="setText();">
+		<input type="button" value="getStyle" id="b05" onclick="getStyle();">
+		<input type="button" value="eleTest" id="b06" onclick="eleTest();">
+	</body>
+</html>
